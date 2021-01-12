@@ -16,6 +16,7 @@
 Gemfile.lock
 .ruby-version
 
+/.idea
 /.env
 
 # Test client
