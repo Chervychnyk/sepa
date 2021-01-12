@@ -87,7 +87,7 @@ module Sepa
       if file_type.present?
         valid = file_type.size < 35
       else
-        return if bank == :op && %i(download_file download_file_list).include?(command)
+        return if %i(danske op).include?(bank) && %i(download_file download_file_list).include?(command)
 
         valid = !(%i(
           download_file
