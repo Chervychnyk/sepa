@@ -69,6 +69,19 @@ module Sepa
     # @return [String]
     attr_accessor :status
 
+    # Optional ISODate specifying the lower limit of a date-range
+    # for the request. Files from this date is included in the
+    # result. Example: 2012-02-17
+    #
+    # @return [String]
+    attr_accessor :start_date
+
+    # Optional ISODate specifying the upper limit of a date-range for the request.
+    # Files from this date is included in the result. Example: 2012-02-17
+    #
+    # @return [String]
+    attr_accessor :end_date
+
     # The one-time pin got for bank. Used with certificate requests.
     #
     # @return [String]
