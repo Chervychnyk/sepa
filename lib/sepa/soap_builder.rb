@@ -23,10 +23,13 @@ module Sepa
       @bank_encryption_certificate = params[:bank_encryption_certificate]
       @environment                 = params[:environment]
       @file_reference              = params[:file_reference]
+      @user_file_name              = params[:user_file_name]
       @file_type                   = params[:file_type]
       @language                    = params[:language]
       @signing_private_key         = params[:signing_private_key]
       @status                      = params[:status]
+      @start_date                  = params[:start_date]
+      @end_date                    = params[:end_date]
       @target_id                   = params[:target_id]
 
       @application_request         = ApplicationRequest.new params

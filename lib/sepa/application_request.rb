@@ -110,7 +110,7 @@ module Sepa
       def set_upload_file_nodes
         set_node_b("Content", @content)
         set_node("FileType", @file_type)
-        add_node_after('FileType', 'FileReference', content: @file_reference) if @bank == :danske && @file_reference.present?
+        add_node_after('FileType', 'UserFileName', content: @user_file_name) if @bank == :danske && @user_file_name.present?
         add_node_after('Environment', 'TargetId', content: @target_id) if @bank == :nordea
       end
 
@@ -118,6 +118,8 @@ module Sepa
       def set_download_file_list_nodes
         add_node_after('Environment', 'TargetId', content: @target_id) if @bank == :nordea
         add_node_after('Timestamp', 'Status', content: @status) if @status.present?
+        add_node_after('Timestamp', 'EndDate', content: @end_date) if @end_date.present?
+        add_node_after('Timestamp', 'StartDate', content: @start_date) if @start_date.present?
         add_node_to_root 'FileType', content: @file_type if @file_type.present?
       end
 
