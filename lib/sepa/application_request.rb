@@ -110,6 +110,7 @@ module Sepa
       def set_upload_file_nodes
         set_node_b("Content", @content)
         set_node("FileType", @file_type)
+        add_node_after('FileType', 'FileReference', content: @file_reference) if @bank == :danske && @file_reference.present?
         add_node_after('Environment', 'TargetId', content: @target_id) if @bank == :nordea
       end
 
